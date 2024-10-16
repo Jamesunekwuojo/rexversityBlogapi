@@ -1,0 +1,34 @@
+BLOGS API DOCUMENTATION
+* Create requiremnt file, and install all the neccessary packages
+
+* use pip3/pip  install -r requiremnts.txt for mac/windows
+
+* After installation, start new django project with the command  'django-admin startproject Blog'
+for mac you can try command 'python3 -m django startproject Blog'
+
+* Navigate to the new django broject created, which is 'Blog'
+and start a new django app, using the command 'python manage.py startapp blogApi'
+
+* Connect new app 'blogApi' with the django project. Go to 'Blog' directory and then to settings.py and add application into the 'INSTALLED_APPS' in the file.
+
+* start working with models. Django uses  ORM to map a python object to a database instance.
+Define model structure.
+
+* Create a serializer file. It converts the instance of python object into a json form that we can return and interact with out Api
+
+* Go to views and start creatng views. We are gojng to use DRF views. Because it provides some views already
+
+* After creating blogpost view with the help of the DRF generics, connect it with URL
+
+* create urls.py file in the blogApi app. And create ur urls patterns which would be matched to the main project 'urls.py'
+
+* migrate database. Whenever changes is being made to the models. you to run migrations for it to effect 'python manage.py makemigrations'
+and then 'python manage.py migrate' to apply migrations
+
+* Run server with command 'python manage.py runserver' test the 'blogposts' routes, and it's working fine
+
+*Create another view whhich can delete each of the blogs by id
+
+* update the urls patterns in the app to match the update view in views.py
+
+*Run server again and test the  update route to update blog
