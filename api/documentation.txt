@@ -16,7 +16,7 @@ Define model structure.
 
 * Create a serializer file. It converts the instance of python object into a json form that we can return and interact with out Api
 
-* Go to views and start creatng views. We are gojng to use DRF views. Because it provides some views already
+* Go to views and start creatng views. We are gojng to use DRF(generic) views. Because it provides some views already
 
 * After creating blogpost view with the help of the DRF generics, connect it with URL
 
@@ -32,3 +32,7 @@ and then 'python manage.py migrate' to apply migrations
 * update the urls patterns in the app to match the update view in views.py
 
 *Run server again and test the  update route to update blog
+
+* Updated 'views.py' file to custom views insted of DRF generic views. 
+
+* Tested all api routes with POstman and it's working fine.
