@@ -19,7 +19,7 @@ Welcome to the Blog API, a simple RESTful API designed to create, update, delete
 7. [Running the Server](#running-the-server)
 8. [Technologies Used](#technologies-used)
 9. [Contributing](#contributing)
-10. [License](#license)
+
 
 ## Project Overview
 This project demonstrates the development of a simple blog API using Django. The API adheres to REST principles, with well-defined routes, proper HTTP methods, and standard error handling mechanisms.
@@ -125,8 +125,7 @@ POST http://127.0.0.1:8000/api/blogposts/create/
 ```json
 {
     "title": "My First Blog",
-    "content": "This is my first blog post.",
-    "author": "James"
+    "content": "This is my first blog post."
 }
 ```
 
@@ -136,7 +135,7 @@ POST http://127.0.0.1:8000/api/blogposts/create/
 - `Description:` Updates the details of an existing blog post by its ID.
 
 ```plaintext
-PUT http://127.0.0.1:8000/api/blogposts/1/
+PUT http://127.0.0.1:8000/api/blogposts/3/
 ```
 
 ### Delete a Blog Post
@@ -145,7 +144,7 @@ PUT http://127.0.0.1:8000/api/blogposts/1/
 - `Description:` Deletes a blog post by its ID.
 
 ```plaintext
-DELETE `http://127.0.0.1:8000/api/blogposts/1/`
+DELETE `http://127.0.0.1:8000/api/blogposts/3/`
 ```
 
 
@@ -197,5 +196,4 @@ I welcome contributions to improve this project! If you want to contribute:
 4. Push the branch (`git push origin feature/feature-name`).
 5. Open a pull request.
 
-## License
-This project is licensed under the MIT License.
+
