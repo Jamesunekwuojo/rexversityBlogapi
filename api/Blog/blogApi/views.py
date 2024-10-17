@@ -4,7 +4,43 @@ from rest_framework.response  import Response
 from .models import BlogPost
 from .serializers import BlogPostSerializer
 
-from rest_framework.views import APIView
+from rest_framework.decorators import api_view
+
+
+#Blog post cretae function
+@api_view(['POST'])
+def createBlog(request):
+    if request.method == 'POST':
+        serializer = BlogPostSerializer(data=request.data)
+
+        if serializer.is_valid:
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+# Blog post get view
+@api_view(['GET'])
+
+def getBlog(request):
+    if request.method == 'GET':
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Class based view using DRF generics
