@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework import generics, status
 from rest_framework.response  import Response
 from .models import BlogPost
@@ -30,6 +30,28 @@ def getBlog(request):
         serialiZer = BlogPostSerializer(blogposts, many=True)
 
         return Response(serialiZer.data)
+
+
+# Blog update view
+def updateBlog(request, pk):
+    blogpost = get_object_or_404(BlogPost, pk=pk)
+
+    if request.method == 'PUT':
+        serializer = BlogPostSerializer(blogpost, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+# Blog Delete view
+@api_view(['DELETE'])
+def deleteBlog(request, pk):
+    blogpost = get_object_or_404(BlogPost, pk=pk)
+    if request.method == 'DELETE':
+        blogpost.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 
