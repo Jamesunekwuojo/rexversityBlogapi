@@ -25,7 +25,14 @@ def createBlog(request):
 
 def getBlog(request):
     if request.method == 'GET':
-        
+        blogposts = BlogPost.objects.all()
+
+        serialiZer = BlogPostSerializer(blogposts, many=True)
+
+        return Response(serialiZer.data)
+
+
+
 
 
 
