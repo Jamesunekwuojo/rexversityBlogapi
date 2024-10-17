@@ -12,8 +12,8 @@ Welcome to the Blog API, a simple RESTful API designed to create, update, delete
 4. [API Endpoints](#api-endpoints)
    - [Fetch All Blog Posts](#fetch-all-blog-posts)
    - [Create a New Blog Post](#create-a-new-blog-post)
-   - [Update Blog](#update-blog)
-   - [Delete a  Blog](#delete-a-blog)
+   - [Update an Existing Blog Post](#update-an-existing-blog-post)
+   - [Delete a Blog Post](#delete-a-blog-post)
 5. [Testing the API](#testing-the-api)
 6. [Running Migrations](#running-migrations)
 7. [Running the Server](#running-the-server)
@@ -131,16 +131,16 @@ POST http://127.0.0.1:8000/api/blogposts/create/
 ```
 
 ### Update an Existing Blog Post
-- `Endpoint:` /api/blogposts/<id>/
+- `Endpoint:` `/api/blogposts/<id>/`
 - `Method: PUT`
 - `Description:` Updates the details of an existing blog post by its ID.
 
 ```plaintext
-PUT `http://127.0.0.1:8000/api/blogposts/1/`
+PUT http://127.0.0.1:8000/api/blogposts/1/
 ```
 
 ### Delete a Blog Post
-- `Endpoint:` /api/blogposts/<id>/
+- `Endpoint:` `/api/blogposts/<id>/`
 - `Method:` DELETE
 - `Description:` Deletes a blog post by its ID.
 
@@ -170,8 +170,14 @@ python manage.py makemigrations
 ```bash
 python manage.py migrate
 ```
-The API will be accessible at:
 
+## Running the Server
+To start the development server, run the following command:
+
+```bash
+python manage.py runserver
+```
+The API will be accessible at:
 ```plaintext
 http://127.0.0.1:8000/
 ```
@@ -180,7 +186,16 @@ http://127.0.0.1:8000/
 ## Technologies Used
 - `Django:` For creating the project and managing the application.
 - `Django REST Framework (DRF):` To create the RESTful API.
-- `SQLite (default):` For database management (you can change to PostgreSQL/MySQL as needed).
+- `SQLite (default):` For database management (it can change to PostgreSQL/MySQL as needed).
+
+## Contributing
+I welcome contributions to improve this project! If you want to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/feature-name`).
+3. Commit your changes (`git commit -m "Add new feature" `).
+4. Push the branch (`git push origin feature/feature-name`).
+5. Open a pull request.
 
 ## License
 This project is licensed under the MIT License.
